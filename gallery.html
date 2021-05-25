@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
+		<title>Green Studio: Gallery</title>
+	</head>
+	<body>
+		<!-- Navigation bar -->
+		<div class="navbar">
+			<div class="overflow-button" onclick="openMenu();">≡</div>
+			<div class="logo" onclick="location.href='index.html';">	
+				<img class="logo-image" src="images/logo-small.png"/>
+			</div>
+			<div class="tabs">
+				<div class="tab" onclick="location.href='empty.html';">About</div>
+				<div class="tab" onclick="location.href='empty.html';">Our Team</div>
+				<div class="tab" onclick="location.href='gallery.html';">Gallery</div>
+				<div class="tab" onclick="location.href='empty.html';">Contact</div>
+			</div>
+		</div>
+		<!-- Menu -->
+		<div class="menu" id="menu">
+			<div class="menu-link" onclick="closeMenu();">Close</div>
+			<div class="menu-link" onclick="location.href='empty.html';">About</div>
+			<div class="menu-link" onclick="location.href='empty.html';">Our Team</div>
+			<div class="menu-link" onclick="location.href='gallery.html';">Gallery</div>
+			<div class="menu-link" onclick="location.href='empty.html';">Contact</div>
+		</div>
+		<div class="overlay" id="menu-overlay" onclick="closeMenu();"></div>
+		<!-- Page content -->
+		<div class="overlay" id="gallery-overlay" onclick="closeImage();">
+			<img class="gallery-full-image" id="gallery-full-image">
+		</div>
+		<div class="page">
+			<div class="gallery-entry">
+				<span class="title-text">Boulders</span><br>
+				<span class="small-text">August 2000 - February 2001 | Scottsdale, Arizona</span><br><br>
+				<img class="gallery-image" src="images/testimage.jpg" onclick="openImage('images/testimage.jpg');" />
+				<img class="gallery-image" src="images/testimage.jpg" onclick="openImage('images/testimage.jpg');" />
+				<img class="gallery-image" src="images/testimage.jpg" onclick="openImage('images/testimage.jpg');" />
+				<img class="gallery-image" src="images/testimage.jpg" onclick="openImage('images/testimage.jpg');" />
+				<img class="gallery-image" src="images/testimage.jpg" onclick="openImage('images/testimage.jpg');" />
+				<img class="gallery-image" src="images/testimage.jpg" onclick="openImage('images/testimage.jpg');" />
+				<img class="gallery-image" src="images/testimage.jpg" onclick="openImage('images/testimage.jpg');" />
+				<img class="gallery-image" src="images/testimage.jpg" onclick="openImage('images/testimage.jpg');" />
+				<img class="gallery-image" src="images/testimage.jpg" onclick="openImage('images/testimage.jpg');" />
+			</div>
+		</div>
+		<!-- Footer -->
+		<footer>
+			<table class="footer-table">
+				<tr>
+					<td class="footer-entry">
+						<span class="small-text"><b>GREEN STUDIO</b></span>
+					</td>
+					<td class="footer-entry">
+						<span class="small-text"><b>Category 1</b><br>11480 N. 85th St.<br>Scottsdale, Arizona 85260<br></span>
+					</td>
+					<td class="footer-entry">
+						<span class="small-text"><b>Category 2</b><br>(480) 348 2688<br>tsgreen@aol.com<br></span>
+					</td>
+					<!-- Social? Facebook, Houzz... -->
+				</tr>
+			</table>
+		</footer>
+	</body>
+	<script type="text/javascript" src="scripts/menu.js"></script>
+	<script type="text/javascript">
+		let overlay = document.getElementById("gallery-overlay");
+		let fullImage = document.getElementById("gallery-full-image");
+		function openImage(source) {
+			fullImage.src = source;
+			overlay.style.opacity = "1";
+			overlay.style.pointerEvents = "auto";
+		}
+		function closeImage() {
+			overlay.style.opacity = "0";
+			overlay.style.pointerEvents = "none";
+		}
+	</script>
+</html>

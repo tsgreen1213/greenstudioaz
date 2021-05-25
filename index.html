@@ -1,11 +1,107 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<h1>Under construction</h1>
-<p>Nothing here yet...</p>
-<img src="testimage.JPG" alt="A test image">
-</body>
+	<head>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
+		<title>Green Studio: Home</title>
+	</head>
+	<body>
+		<!-- Navigation bar -->
+		<div class="navbar">
+			<div class="overflow-button" onclick="openMenu();">≡</div>
+			<div class="logo" onclick="location.href='index.html';">	
+				<img class="logo-image" src="images/logo-small.png"/>
+			</div>
+			<div class="tabs">
+				<div class="tab" onclick="location.href='empty.html';">About</div>
+				<div class="tab" onclick="location.href='empty.html';">Our Team</div>
+				<div class="tab" onclick="location.href='gallery.html';">Gallery</div>
+				<div class="tab" onclick="location.href='empty.html';">Contact</div>
+			</div>
+		</div>
+		<!-- Menu -->
+		<div class="menu" id="menu">
+			<div class="menu-link" onclick="closeMenu();">Close</div>
+			<div class="menu-link" onclick="location.href='empty.html';">About</div>
+			<div class="menu-link" onclick="location.href='empty.html';">Our Team</div>
+			<div class="menu-link" onclick="location.href='gallery.html';">Gallery</div>
+			<div class="menu-link" onclick="location.href='empty.html';">Contact</div>
+		</div>
+		<div class="overlay" id="menu-overlay" onclick="closeMenu();"></div>
+		<!-- Page content -->
+		<div class="banner" id="banner">
+			<div class="banner-overlay">
+				Slick slogan or description.<br>
+				<button class="banner-button" onclick="location.href='page2.html';">Explore</button>
+			</div>
+		</div>
+		<div class="page">
+		<div class="card-container">
+			<div class="card">
+				<img class="card-image" src="images/testimage.jpg"/>
+				<div class="card-text">
+					<span class="title-text">Residential</span>
+					<br>
+					<span class="small-text">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae ligula non enim mattis venenatis eget commodo orci. 
+						Quisque vulputate fermentum lectus ac dapibus. Morbi sed feugiat eros. Duis id ornare nisl. Morbi molestie auctor urna, eleifend gravida leo venenatis eget. 
+						Maecenas leo felis, cursus non tincidunt sed, accumsan ut augue.
+					</span>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-image" src="images/testimage.jpg"/>
+				<div class="card-text">
+					<span class="title-text">Residential</span>
+					<br>
+					<span class="small-text">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae ligula non enim mattis venenatis eget commodo orci. 
+						Quisque vulputate fermentum lectus ac dapibus. Morbi sed feugiat eros. Duis id ornare nisl. Morbi molestie auctor urna, eleifend gravida leo venenatis eget. 
+						Maecenas leo felis, cursus non tincidunt sed, accumsan ut augue.
+					</span>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-image" src="images/testimage.jpg"/>
+				<div class="card-text">
+					<span class="title-text">Residential</span>
+					<br>
+					<span class="small-text">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae ligula non enim mattis venenatis eget commodo orci. 
+						Quisque vulputate fermentum lectus ac dapibus. Morbi sed feugiat eros. Duis id ornare nisl. Morbi molestie auctor urna, eleifend gravida leo venenatis eget. 
+						Maecenas leo felis, cursus non tincidunt sed, accumsan ut augue.
+					</span>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+		
+		<!-- Brief about, with link to About -->
+		
+		<!-- Magazines -->
+		
+		<!-- Footer -->
+		<footer>
+			<table class="footer-table">
+				<tr>
+					<td class="footer-entry">
+						<span class="small-text"><b>GREEN STUDIO</b></span>
+					</td>
+					<td class="footer-entry">
+						<span class="small-text"><b>Category 1</b><br>11480 N. 85th St.<br>Scottsdale, Arizona 85260<br></span>
+					</td>
+					<td class="footer-entry">
+						<span class="small-text"><b>Category 2</b><br>(480) 348 2688<br>tsgreen@aol.com<br></span>
+					</td>
+					<!-- Social? Facebook, Houzz... -->
+				</tr>
+			</table>
+		</footer>
+	</body>
+	<script type="text/javascript" src="scripts/menu.js"></script>
+	<script type="text/javascript" src="scripts/banner.js"></script>
+	<script type="text/javascript">
+		
+	</script>
 </html>
