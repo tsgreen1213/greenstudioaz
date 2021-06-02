@@ -143,7 +143,7 @@ body, html {
 }
 /* Footer */
 footer {
-	padding: 30px 40px 30px 40px;
+	padding: 30px 0px 30px 0px;
 	color: #808080;
 }
 .footer-table {
@@ -162,14 +162,18 @@ footer {
 .banner {
 	height: 70vh;
 	max-height: 800px;
-	/* Background image */
-	background-position: center; /* Center the image */
-	background-size: cover;
-	background-repeat: no-repeat;
-	/* Transition between images */
-	transition: background 1.5s linear;
-	/* For positioning next/last buttons */
 	position: relative;
+}
+.banner-image {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	transition: opacity 1.5s linear;
+	pointer-events: none;
+}
+.hidden {
+	opacity: 0;
 }
 .banner-button {
 	position: absolute;
@@ -222,13 +226,14 @@ footer {
 	top: -120px;
 	position: relative;
 }
-.table-cell {
-	vertical-align: top; 
-	width: 50%;
+.page-item {
+	vertical-align: text-top;
+	display: inline-block;
+	max-width: 400px;
+	margin-right: 20px;
 }
-.table-image {
+.page-image {
 	max-height: 500px;
-	margin-left: 20px;
 }
 /* Text */
 .small-text {

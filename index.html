@@ -34,6 +34,13 @@
 		<div class="overlay" id="menu-overlay" onclick="closeMenu();"></div>
 		<!-- Page content -->
 		<div class="banner" id="banner">
+			<img class="banner-image" src="images/banner/1.png" />
+			<img class="banner-image hidden" src="images/banner/2.png" />
+			<img class="banner-image hidden" src="images/banner/3.png" />
+			<img class="banner-image hidden" src="images/banner/4.png" />
+			<img class="banner-image hidden" src="images/banner/5.png" />
+			<img class="banner-image hidden" src="images/banner/6.png" />
+			<img class="banner-image hidden" src="images/banner/7.png" />
 			<div class="banner-button banner-left-button" onclick="lastImage(); pause();"><</div>
 			<div class="banner-button banner-right-button" onclick="nextImage(); pause();">></div>
 		</div>
@@ -48,21 +55,6 @@
 					<button class="button" onclick="location.href='about.html';">Read more</button>
 				</div>
 			</div>
-			<!--
-			<div class="break"></div>
-			<div class="card" onclick="location.href='gallery.html#residential';">
-				<img class="card-image" src="images/testimage.jpg"/>
-				<div class="card-text">
-					<div class="title-text">Residential</div>
-				</div>
-			</div>
-			<div class="card" onclick="location.href='gallery.html#commercial';">
-				<img class="card-image" src="images/testimage.jpg"/>
-				<div class="card-text">
-					<div class="title-text">Commercial</div>
-				</div>
-			</div>
-			-->
 		</div>
 		<!-- Footer -->
 		<footer>
@@ -91,45 +83,35 @@
 	</body>
 	<script type="text/javascript" src="scripts/menu.js"></script>
 	<script type="text/javascript">
-		//Retrieve banner div
-		let banner = document.getElementById("banner");
-		//Images used in banner
-		let images = [
-			"images/banner/1.png",
-			"images/banner/2.png",
-			"images/banner/3.png",
-			"images/banner/4.png",
-			"images/banner/5.png",
-			"images/banner/6.png",
-			"images/banner/7.png"
-		];
-		//Set banner to first image
-		banner.style.backgroundImage = "url('" + images[0] + "')";
-		//Track index of current image
+		let animationTimeout = 1500;
+	
+		let images = document.getElementsByClassName("banner-image");
 		let current = 0;
 		let count = images.length;
-		//Tracks if fade-in animation is currently occuring
+		
 		let disabled = false;
 		//Moves to next image, and disables buttons during animation
 		function nextImage() {
 			if(!disabled) {
+				images[current].classList.add("hidden");
 				current = (current + 1) % count;
-				banner.style.backgroundImage = "url('" + images[current] + "')";
+				images[current].classList.remove("hidden");
 				disabled = true;
 				setTimeout(function() { 
 					disabled = false;
-				}, 1500);
+				}, animationTimeout);
 			}
 		}
 		//Moves to previous image, and disables buttons during animation
 		function lastImage() {
 			if(!disabled) {
+				images[current].classList.add("hidden");
 				current = (current + count - 1) % count;
-				banner.style.backgroundImage = "url('" + images[current] + "')";
+				images[current].classList.remove("hidden");
 				disabled = true;
 				setTimeout(function() { 
 					disabled = false;
-				}, 1500);
+				}, animationTimeout);
 			}
 		}
 		//Moves to next image after a time interval
