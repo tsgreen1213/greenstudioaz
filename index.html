@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset=“UTF-8”>
-		<meta name=“viewport” content=“width=device-width, initial-scale=1.0”>
-		<meta http-equiv=“X-UA-Compatible” content=“ie=edge”>
-		<link rel="stylesheet" href="style.css" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" type="text/css" href="style.css" />
 		<link rel="icon" type="image/png" href="images/favicon.png" />
 		<title>Green Studio: Home</title>
 	</head>
@@ -12,99 +12,139 @@
 		<!-- Navigation bar -->
 		<div class="navbar">
 			<div class="overflow-button" onclick="openMenu();">≡</div>
-			<div class="logo" onclick="location.href='index.html';">	
+			<div class="logo" onclick="window.scroll({ top: 0, left: 0, behavior: 'smooth' });">
 				<img class="logo-image" src="images/logo-small.png"/>
 			</div>
 			<div class="tabs">
-				<div class="tab" onclick="location.href='empty.html';">About</div>
-				<div class="tab" onclick="location.href='empty.html';">Our Team</div>
+				<div class="tab" onclick="window.scroll({ top: 0, left: 0, behavior: 'smooth' });"><b>Home</b></div>
+				<div class="tab" onclick="location.href='about.html';">About</div>
+				<div class="tab" onclick="location.href='team.html';">Our Team</div>
 				<div class="tab" onclick="location.href='gallery.html';">Gallery</div>
-				<div class="tab" onclick="location.href='empty.html';">Contact</div>
+				<div class="tab" onclick="location.href='contact.html';">Contact</div>
 			</div>
 		</div>
 		<!-- Menu -->
 		<div class="menu" id="menu">
-			<div class="menu-link" onclick="closeMenu();">Close</div>
-			<div class="menu-link" onclick="location.href='empty.html';">About</div>
-			<div class="menu-link" onclick="location.href='empty.html';">Our Team</div>
+			<div class="menu-link" onclick="closeMenu()"><b>Home</b></div>
+			<div class="menu-link" onclick="location.href='about.html';">About</div>
+			<div class="menu-link" onclick="location.href='team.html';">Our Team</div>
 			<div class="menu-link" onclick="location.href='gallery.html';">Gallery</div>
-			<div class="menu-link" onclick="location.href='empty.html';">Contact</div>
+			<div class="menu-link" onclick="location.href='contact.html';">Contact</div>
 		</div>
 		<div class="overlay" id="menu-overlay" onclick="closeMenu();"></div>
 		<!-- Page content -->
 		<div class="banner" id="banner">
-			<div class="banner-overlay">
-				Slick slogan or description.<br>
-				<button class="banner-button" onclick="location.href='page2.html';">Explore</button>
-			</div>
+			<div class="banner-button banner-left-button" onclick="lastImage(); pause();"><</div>
+			<div class="banner-button banner-right-button" onclick="nextImage(); pause();">></div>
 		</div>
 		<div class="page">
-		<div class="card-container">
-			<div class="card">
-				<img class="card-image" src="images/testimage.jpg"/>
-				<div class="card-text">
-					<span class="title-text">Residential</span>
-					<br>
-					<span class="small-text">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae ligula non enim mattis venenatis eget commodo orci. 
-						Quisque vulputate fermentum lectus ac dapibus. Morbi sed feugiat eros. Duis id ornare nisl. Morbi molestie auctor urna, eleifend gravida leo venenatis eget. 
-						Maecenas leo felis, cursus non tincidunt sed, accumsan ut augue.
-					</span>
+			<div class="page-entry">
+				<div class="big-text">Client-driven design.</div>
+				<div class="small-text">
+					Green Studio is dedicated to the development of quality custom homes that creatively meet each client's unique program requirements
+					and respond sensitively to their environment.
+				</div>
+				<div class="button-container">
+					<button class="button" onclick="location.href='about.html';">Read more</button>
 				</div>
 			</div>
-			<div class="card">
+			<!--
+			<div class="break"></div>
+			<div class="card" onclick="location.href='gallery.html#residential';">
 				<img class="card-image" src="images/testimage.jpg"/>
 				<div class="card-text">
-					<span class="title-text">Residential</span>
-					<br>
-					<span class="small-text">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae ligula non enim mattis venenatis eget commodo orci. 
-						Quisque vulputate fermentum lectus ac dapibus. Morbi sed feugiat eros. Duis id ornare nisl. Morbi molestie auctor urna, eleifend gravida leo venenatis eget. 
-						Maecenas leo felis, cursus non tincidunt sed, accumsan ut augue.
-					</span>
+					<div class="title-text">Residential</div>
 				</div>
 			</div>
-			<div class="card">
+			<div class="card" onclick="location.href='gallery.html#commercial';">
 				<img class="card-image" src="images/testimage.jpg"/>
 				<div class="card-text">
-					<span class="title-text">Residential</span>
-					<br>
-					<span class="small-text">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae ligula non enim mattis venenatis eget commodo orci. 
-						Quisque vulputate fermentum lectus ac dapibus. Morbi sed feugiat eros. Duis id ornare nisl. Morbi molestie auctor urna, eleifend gravida leo venenatis eget. 
-						Maecenas leo felis, cursus non tincidunt sed, accumsan ut augue.
-					</span>
+					<div class="title-text">Commercial</div>
 				</div>
 			</div>
+			-->
 		</div>
-		</div>
-		
-		
-		<!-- Brief about, with link to About -->
-		
-		<!-- Magazines -->
-		
 		<!-- Footer -->
 		<footer>
 			<table class="footer-table">
 				<tr>
 					<td class="footer-entry">
-						<span class="small-text"><b>GREEN STUDIO</b></span>
+						<div class="small-text">
+							<b>GREEN STUDIO</b>
+						</div>
+						<a href="https://www.facebook.com/greenstudioaz/" target="_blank">
+							<img class="icon" src="images/facebook.png" alt="Facebook" />
+						</a>
+						<a href="https://www.houzz.com/pro/greenstudioaz" target="_blank">
+							<img class="icon" src="images/houzz.png" alt="Houzz" />
+						</a>
 					</td>
 					<td class="footer-entry">
-						<span class="small-text"><b>Category 1</b><br>11480 N. 85th St.<br>Scottsdale, Arizona 85260<br></span>
+						<div class="small-text"><b>Address</b><br>11480 N. 85th St.<br>Scottsdale, Arizona 85260<br></div>
 					</td>
 					<td class="footer-entry">
-						<span class="small-text"><b>Category 2</b><br>(480) 348 2688<br>tsgreen@aol.com<br></span>
+						<div class="small-text"><b>Contact</b><br>(602) 697-4246<br>tyler@greenstudioaz.com<br></div>
 					</td>
-					<!-- Social? Facebook, Houzz... -->
 				</tr>
 			</table>
 		</footer>
 	</body>
 	<script type="text/javascript" src="scripts/menu.js"></script>
-	<script type="text/javascript" src="scripts/banner.js"></script>
 	<script type="text/javascript">
-		
+		//Retrieve banner div
+		let banner = document.getElementById("banner");
+		//Images used in banner
+		let images = [
+			"images/banner/1.png",
+			"images/banner/2.png",
+			"images/banner/3.png",
+			"images/banner/4.png",
+			"images/banner/5.png",
+			"images/banner/6.png",
+			"images/banner/7.png"
+		];
+		//Set banner to first image
+		banner.style.backgroundImage = "url('" + images[0] + "')";
+		//Track index of current image
+		let current = 0;
+		let count = images.length;
+		//Tracks if fade-in animation is currently occuring
+		let disabled = false;
+		//Moves to next image, and disables buttons during animation
+		function nextImage() {
+			if(!disabled) {
+				current = (current + 1) % count;
+				banner.style.backgroundImage = "url('" + images[current] + "')";
+				disabled = true;
+				setTimeout(function() { 
+					disabled = false;
+				}, 1500);
+			}
+		}
+		//Moves to previous image, and disables buttons during animation
+		function lastImage() {
+			if(!disabled) {
+				current = (current + count - 1) % count;
+				banner.style.backgroundImage = "url('" + images[current] + "')";
+				disabled = true;
+				setTimeout(function() { 
+					disabled = false;
+				}, 1500);
+			}
+		}
+		//Moves to next image after a time interval
+		let timer;
+		function start() {
+			nextImage();
+			timer = setInterval(nextImage, 5000);
+		}
+		//Starts banner animation after a timeout
+		let start_timer = setTimeout(start, 5000);
+		//Pauses banner animation, and restarts it after a longer timeout
+		function pause() {
+			clearInterval(timer);
+			clearTimeout(start_timer);
+			start_timer = setTimeout(start, 10000);
+		}
 	</script>
 </html>
