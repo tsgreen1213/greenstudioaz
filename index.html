@@ -2,129 +2,138 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<meta name="description" content="Green Studio, client-driven architectural design.">
+		<meta name="keywords" content="Tyler, Green, Studio, Arizona, Scottsdale, Phoenix, Paradise Valley, architecture, architectural, design, remodel, addition">
+		<meta name="author" content="Green Studio">
+		<meta name="theme-color" content="#006600">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="style.css" />
-		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<title>Green Studio: Home</title>
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/site.webmanifest">
+		<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#008000">
+		<link rel="shortcut icon" href="favicon/favicon.ico">
+		<meta name="msapplication-TileColor" content="#00a300">
+		<meta name="msapplication-config" content="favicon/browserconfig.xml">
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/c755e7f198.js" crossorigin="anonymous"></script>		
+		<!-- Title -->
+		<title>Home - Green Studio</title>
 	</head>
 	<body>
-		<!-- Navigation bar -->
-		<div class="navbar">
-			<div class="overflow-button" onclick="openMenu();">≡</div>
-			<div class="logo" onclick="window.scroll({ top: 0, left: 0, behavior: 'smooth' });">
-				<img class="logo-image" src="images/logo-small.png"/>
+		<!-- Navbar-->
+		<div class="navbar unselectable">
+			<div class="navbar-button" onclick="openMenu();">≡</div>
+			<div class="navbar-logo">
+				<img class="navbar-logo-image" src="images/logo-small.png" onclick="window.scroll({ top: 0, left: 0, behavior: 'smooth' });"/>
 			</div>
-			<div class="tabs">
-				<div class="tab" onclick="window.scroll({ top: 0, left: 0, behavior: 'smooth' });"><b>Home</b></div>
-				<div class="tab" onclick="location.href='about.html';">About</div>
-				<div class="tab" onclick="location.href='gallery.html';">Gallery</div>
-				<div class="tab" onclick="location.href='contact.html';">Contact</div>
+			<div class="navbar-link-container">
+				<div class="navbar-link navbar-link-active" onclick="window.scroll({ top: 0, left: 0, behavior: 'smooth' });">Home<div class="navbar-link-active-underline"></div></div>
+				<div class="navbar-link" onclick="location.href='about.html';">About</div>
+				<div class="navbar-link" onclick="location.href='gallery.html';">Gallery</div>
+				<div class="navbar-link" onclick="location.href='contact.html';">Contact</div>
 			</div>
 		</div>
-		<!-- Menu -->
-		<div class="menu" id="menu">
-			<div class="menu-link" onclick="closeMenu()"><b>Home</b></div>
-			<div class="menu-link" onclick="location.href='about.html';">About</div>
-			<div class="menu-link" onclick="location.href='gallery.html';">Gallery</div>
-			<div class="menu-link" onclick="location.href='contact.html';">Contact</div>
+		<!-- Sidebar overlay -->
+		<div class="overlay" id="overlay" onclick="closeMenu();"></div>
+		<!-- Sidebar -->
+		<div class="sidebar unselectable" id="sidebar">
+			<div class="sidebar-link sidebar-link-mobile sidebar-link-active" onclick="closeMenu();">Home</div>
+			<div class="sidebar-link sidebar-link-mobile" onclick="location.href='about.html';">About</div>
+			<div class="sidebar-link sidebar-link-mobile" onclick="location.href='gallery.html';">Gallery</div>
+			<div class="sidebar-link sidebar-link-mobile" onclick="location.href='contact.html';">Contact</div>
 		</div>
-		<div class="overlay" id="menu-overlay" onclick="closeMenu();"></div>
 		<!-- Page content -->
-		<div class="banner" id="banner">
-			<img class="banner-image" src="images/banner/1.png" />
-			<img class="banner-image hidden" src="images/banner/2.png" />
-			<img class="banner-image hidden" src="images/banner/3.png" />
-			<img class="banner-image hidden" src="images/banner/4.png" />
-			<img class="banner-image hidden" src="images/banner/5.png" />
-			<img class="banner-image hidden" src="images/banner/6.png" />
-			<img class="banner-image hidden" src="images/banner/7.png" />
-			<div class="banner-button banner-left-button" onclick="lastImage(); pause();"><</div>
-			<div class="banner-button banner-right-button" onclick="nextImage(); pause();">></div>
-		</div>
 		<div class="page">
-			<div class="page-entry">
-				<div class="big-text">Client-driven <span class="highlight-text">design</span>.</div>
-				<div class="small-text">
-					Green Studio is dedicated to the development of quality custom homes that creatively meet each client's unique program requirements
-					and respond sensitively to their environment.
-				</div>
-				<div class="button-container">
-					<button class="button" onclick="location.href='about.html';">Read more</button>
-				</div>
+			<h1>Green Studio: Home</h1>
+			<div class="banner" id="banner">
+				<img class="banner-image" src="images/banner/1.png" />
+				<img class="banner-image hidden" src="images/banner/2.png" />
+				<img class="banner-image hidden" src="images/banner/3.png" />
+				<img class="banner-image hidden" src="images/banner/4.png" />
+				<img class="banner-image hidden" src="images/banner/5.png" />
+				<img class="banner-image hidden" src="images/banner/6.png" />
+				<img class="banner-image hidden" src="images/banner/7.png" />
+				<div class="banner-button banner-left-button" onclick="lastImage(); pause();">&#11164;</div>
+				<div class="banner-button banner-right-button" onclick="nextImage(); pause();">&#11166;</div>
 			</div>
+			<!-- Footer -->
+			<div class="footer">
+				<div class="footer-entry footer-entry-first">
+					<div class="small-text padded-text"><b>GREEN STUDIO</b></div>					
+					<div class="footer-icon unselectable" onclick="window.open('https://www.facebook.com/greenstudioaz/', '_blank');">
+						<div class="fab fa-facebook-f"></div>
+					</div>
+					<div class="footer-icon unselectable" onclick="window.open('https://www.houzz.com/pro/greenstudioaz', '_blank');">
+						<div class="fab fa-houzz"></div>
+					</div>
+				</div>
+				<div class="footer-entry">
+					<div class="tiny-text"><b>PHONE</b></div>
+					<div class="small-text padded-text">(602) 697-4246</div>
+					<div class="tiny-text"><b>EMAIL</b></div>
+					<div class="small-text">tyler@greenstudioaz.com</div>
+				</div>
+				<div class="footer-entry footer-entry-last">
+					<div class="tiny-text"><b>ADDRESS</b></div>
+					<div class="small-text padded-text">11480 N. 85th St.<br>Scottsdale, AZ 85260</div>
+				</div>
+			</div>	
 		</div>
-		<!-- Footer -->
-		<footer>
-			<table class="footer-table">
-				<tr>
-					<td class="footer-entry">
-						<div class="small-text">
-							<b>GREEN STUDIO</b>
-						</div>
-						<a href="https://www.facebook.com/greenstudioaz/" target="_blank">
-							<img class="icon" src="images/facebook.png" alt="Facebook" />
-						</a>
-						<a href="https://www.houzz.com/pro/greenstudioaz" target="_blank">
-							<img class="icon" src="images/houzz.png" alt="Houzz" />
-						</a>
-					</td>
-					<td class="footer-entry">
-						<div class="small-text"><b>Address</b><br>11480 N. 85th St.<br>Scottsdale, Arizona 85260<br></div>
-					</td>
-					<td class="footer-entry">
-						<div class="small-text"><b>Contact</b><br>(602) 697-4246<br>tyler@greenstudioaz.com<br></div>
-					</td>
-				</tr>
-			</table>
-		</footer>
-	</body>
-	<script type="text/javascript" src="scripts/menu.js"></script>
-	<script type="text/javascript">
-		let animationTimeout = 1500;
-	
-		let images = document.getElementsByClassName("banner-image");
-		let current = 0;
-		let count = images.length;
+		<script type="text/javascript" src="scripts/menu.js"></script>
+		<script type="text/javascript">
+			let animationTimeout = 1500;
 		
-		let disabled = false;
-		//Moves to next image, and disables buttons during animation
-		function nextImage() {
-			if(!disabled) {
-				images[current].classList.add("hidden");
-				current = (current + 1) % count;
-				images[current].classList.remove("hidden");
-				disabled = true;
-				setTimeout(function() { 
-					disabled = false;
-				}, animationTimeout);
+			let images = document.getElementsByClassName("banner-image");
+			let current = 0;
+			let count = images.length;
+			
+			let disabled = false;
+			//Moves to next image, and disables buttons during animation
+			function nextImage() {
+				if(!disabled) {
+					images[current].classList.add("hidden");
+					current = (current + 1) % count;
+					images[current].classList.remove("hidden");
+					disabled = true;
+					setTimeout(function() { 
+						disabled = false;
+					}, animationTimeout);
+				}
 			}
-		}
-		//Moves to previous image, and disables buttons during animation
-		function lastImage() {
-			if(!disabled) {
-				images[current].classList.add("hidden");
-				current = (current + count - 1) % count;
-				images[current].classList.remove("hidden");
-				disabled = true;
-				setTimeout(function() { 
-					disabled = false;
-				}, animationTimeout);
+			//Moves to previous image, and disables buttons during animation
+			function lastImage() {
+				if(!disabled) {
+					images[current].classList.add("hidden");
+					current = (current + count - 1) % count;
+					images[current].classList.remove("hidden");
+					disabled = true;
+					setTimeout(function() { 
+						disabled = false;
+					}, animationTimeout);
+				}
 			}
-		}
-		//Moves to next image after a time interval
-		let timer;
-		function start() {
-			nextImage();
-			timer = setInterval(nextImage, 5000);
-		}
-		//Starts banner animation after a timeout
-		let start_timer = setTimeout(start, 5000);
-		//Pauses banner animation, and restarts it after a longer timeout
-		function pause() {
-			clearInterval(timer);
-			clearTimeout(start_timer);
-			start_timer = setTimeout(start, 10000);
-		}
-	</script>
+			//Moves to next image after a time interval
+			let timer;
+			function start() {
+				nextImage();
+				timer = setInterval(nextImage, 5000);
+			}
+			//Starts banner animation after a timeout
+			let start_timer = setTimeout(start, 5000);
+			//Pauses banner animation, and restarts it after a longer timeout
+			function pause() {
+				clearInterval(timer);
+				clearTimeout(start_timer);
+				start_timer = setTimeout(start, 10000);
+			}
+		</script>
+	</body>	
 </html>

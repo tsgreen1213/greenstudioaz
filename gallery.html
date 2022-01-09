@@ -2,228 +2,273 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<meta name="description" content="Green Studio, client-driven architectural design.">
+		<meta name="keywords" content="Tyler, Green, Studio, Arizona, Scottsdale, Phoenix, Paradise Valley, architecture, architectural, design, remodel, addition">
+		<meta name="author" content="Green Studio">
+		<meta name="theme-color" content="#008000">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="style.css" />
-		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<title>Green Studio: Gallery</title>
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/site.webmanifest">
+		<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#008000">
+		<link rel="shortcut icon" href="favicon/favicon.ico">
+		<meta name="msapplication-TileColor" content="#00a300">
+		<meta name="msapplication-config" content="favicon/browserconfig.xml">
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/c755e7f198.js" crossorigin="anonymous"></script>		
+		<!-- Title -->
+		<title>Gallery - Green Studio</title>
 	</head>
 	<body>
-		<!-- Navigation bar -->
-		<div class="navbar">
-			<div class="overflow-button" onclick="openMenu();">≡</div>
-			<div class="logo" onclick="location.href='index.html';">
-				<img class="logo-image" src="images/logo-small.png"/>
+		<!-- Navbar-->
+		<div class="navbar unselectable">
+			<div class="navbar-button" onclick="openMenu();">≡</div>
+			<div class="navbar-logo">
+				<img class="navbar-logo-image" src="images/logo-small.png" onclick="window.scroll({ top: 0, left: 0, behavior: 'smooth' });"/>
 			</div>
-			<div class="tabs">
-				<div class="tab" onclick="location.href='index.html';">Home</div>
-				<div class="tab" onclick="location.href='about.html';">About</div>
-				<div class="tab" onclick="window.scroll({ top: 0, left: 0, behavior: 'smooth' });"><b>Gallery</b></div>
-				<div class="tab" onclick="location.href='contact.html';">Contact</div>
+			<div class="navbar-link-container">
+				<div class="navbar-link" onclick="location.href='index.html';">Home</div>
+				<div class="navbar-link" onclick="location.href='about.html';">About</div>
+				<div class="navbar-link navbar-link-active" onclick="window.scroll({ top: 0, left: 0, behavior: 'smooth' });">Gallery<div class="navbar-link-active-underline"></div></div>
+				<div class="navbar-link" onclick="location.href='contact.html';">Contact</div>
 			</div>
 		</div>
-		<!-- Menu -->
-		<div class="menu" id="menu">
-			<div class="menu-link" onclick="location.href='index.html';">Home</div>
-			<div class="menu-link" onclick="location.href='about.html';">About</div>
-			<div class="menu-link" onclick="closeMenu()"><b>Gallery</b></div>
-			<div class="menu-link" onclick="location.href='contact.html';">Contact</div>
+		<!-- Sidebar overlay -->
+		<div class="overlay" id="overlay" onclick="closeMenu();"></div>
+		<!-- Sidebar -->
+		<div class="sidebar unselectable" id="sidebar">
+			<div class="sidebar-link sidebar-link-mobile" onclick="location.href='index.html';">Home</div>
+			<div class="sidebar-link sidebar-link-mobile" onclick="location.href='about.html';">About</div>
+			<div class="sidebar-link sidebar-link-mobile sidebar-link-active" onclick="closeMenu();">Gallery</div>
+			<div class="sidebar-link sidebar-link-mobile" onclick="location.href='contact.html';">Contact</div>
 		</div>
-		<div class="overlay" id="menu-overlay" onclick="closeMenu();"></div>
 		<!-- Page content -->
-		<div class="overlay" id="gallery-overlay" onclick="closeImage();">
-			<img class="gallery-full-image" id="gallery-full-image">
-		</div>
 		<div class="page">
-			<div class="page-entry">
-				<div class="big-text">Gallery</div>
-				<br>
-				<div class="anchor" id="residential"></div>
-				<div class="title-text">Residential</div>
-				<span class="gallery-title">Boulders • 2019</span><br>
-				<img class="gallery-image" src="images/boulders-1/thumb/1.jpg" onclick="setMain('gallery-main-image-1', 'images/boulders-1/1.jpg');" />
-				<img class="gallery-image" src="images/boulders-1/thumb/2.jpg" onclick="setMain('gallery-main-image-1', 'images/boulders-1/2.jpg');" />
-				<img class="gallery-image" src="images/boulders-1/thumb/3.jpg" onclick="setMain('gallery-main-image-1', 'images/boulders-1/3.jpg');" />
-				<img class="gallery-image" src="images/boulders-1/thumb/4.jpg" onclick="setMain('gallery-main-image-1', 'images/boulders-1/4.jpg');" />
-				<img class="gallery-image" src="images/boulders-1/thumb/5.jpg" onclick="setMain('gallery-main-image-1', 'images/boulders-1/5.jpg');" />
-				<img class="gallery-main-image" id="gallery-main-image-1" src="images/boulders-1/1.jpg" onclick="openImage('images/boulders-1/1.jpg');" />
+			<h1>Green Studio: Gallery</h1>
+			<div class="overlay gallery-overlay" id="gallery-overlay" onclick="closeImage();">
+				<img class="gallery-full-image" id="gallery-full-image">
 			</div>
-			<div class="break"></div>
-			<div class="page-entry">
-				<span class="gallery-title">Boulders • 2018</span><br>
-				<img class="gallery-image" src="images/boulders-2/thumb/1.jpg" onclick="setMain('gallery-main-image-2', 'images/boulders-2/1.jpg');" />
-				<img class="gallery-image" src="images/boulders-2/thumb/2.jpg" onclick="setMain('gallery-main-image-2', 'images/boulders-2/2.jpg');" />
-				<img class="gallery-main-image" id="gallery-main-image-2" src="images/boulders-2/1.jpg" onclick="openImage('images/boulders-2/1.jpg');" />
+			<div class="gallery-container">
+				<div class="page-title condensed">Gallery</div><br>
+				<div class="gallery-title"><b>Boulders</b> • 2019</div>
+				<div class="gallery-entry">
+					<div class="gallery-image"><img src="images/boulders-1/1.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/boulders-1/2.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/boulders-1/3.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/boulders-1/4.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/boulders-1/5.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><!-- Nothing --></div>
+				</div>
+				<div class="gallery-title"><b>Boulders</b> • 2018</div>
+				<div class="gallery-entry">
+					<div class="gallery-image"><img src="images/boulders-2/1.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/boulders-2/2.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><!-- Nothing --></div>
+				</div>
+				<div class="gallery-title"><b>Carefree</b> • 2016</div>
+				<div class="gallery-entry">
+					<div class="gallery-image"><img src="images/carefree-1/1.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/carefree-1/2.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/carefree-1/3.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/carefree-1/4.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><!-- Nothing --></div>
+				</div>
+				<div class="gallery-title"><b>Carefree</b> • 1988</div>
+				<div class="gallery-entry">
+					<div class="gallery-image"><img src="images/carefree-2/1.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/carefree-2/2.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/carefree-2/3.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/carefree-2/4.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/carefree-2/5.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/carefree-2/6.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><!-- Nothing --></div>
+				</div>
+				<div class="gallery-title"><b>Desert Mountain</b> • 2020</div>
+				<div class="gallery-entry">
+					<div class="gallery-image"><img src="images/desert-mountain/1.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/desert-mountain/2.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/desert-mountain/3.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/desert-mountain/4.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/desert-mountain/5.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><!-- Nothing --></div>
+				</div>
+				<div class="gallery-title"><b>Estancia</b> • 2009</div>
+				<div class="gallery-entry">
+					<div class="gallery-image"><img src="images/estancia/1.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/estancia/2.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/estancia/3.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/estancia/4.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/estancia/5.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><!-- Nothing --></div>
+				</div>
+				<div class="gallery-title"><b>Scottsdale</b> • 2009</div>
+				<div class="gallery-entry">
+					<div class="gallery-image"><img src="images/scottsdale-1/1.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/scottsdale-1/2.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/scottsdale-1/3.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/scottsdale-1/4.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/scottsdale-1/5.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/scottsdale-1/6.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><!-- Nothing --></div>
+				</div>
+				<div class="gallery-title"><b>Scottsdale</b> • 2019</div>
+				<div class="gallery-entry">
+					<div class="gallery-image"><img src="images/scottsdale-2/1.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/scottsdale-2/2.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/scottsdale-2/3.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/scottsdale-2/4.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/scottsdale-2/5.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><!-- Nothing --></div>
+				</div>
+				<div class="gallery-title"><b>Troon Highlands</b> • 2014</div>
+				<div class="gallery-entry">
+					<div class="gallery-image"><img src="images/troon-highlands/1.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/troon-highlands/2.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/troon-highlands/3.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/troon-highlands/4.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/troon-highlands/5.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><!-- Nothing --></div>
+				</div>
+				<div class="gallery-title"><b>Whisper Rock</b> • 2014</div>
+				<div class="gallery-entry">
+					<div class="gallery-image"><img src="images/whisper-rock-1/1.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/whisper-rock-1/2.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/whisper-rock-1/3.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><!-- Nothing --></div>
+				</div>
+				<div class="gallery-title"><b>Whisper Rock</b> • 2015</div>
+				<div class="gallery-entry">
+					<div class="gallery-image"><img src="images/whisper-rock-2/1.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/whisper-rock-2/2.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/whisper-rock-2/3.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/whisper-rock-2/4.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><!-- Nothing --></div>
+				</div>
+				<div class="gallery-title">Misc. residential projects</div>
+				<div class="gallery-entry">
+					<div class="gallery-image"><img src="images/misc/1.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/misc/2.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/misc/3.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/misc/4.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/misc/5.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/misc/6.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/misc/7.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/misc/8.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/misc/9.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><!-- Nothing --></div>
+				</div>
+				<div class="gallery-title">Misc. commercial projects</div>
+				<div class="gallery-entry">
+					<div class="gallery-image"><img src="images/commercial/1.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/commercial/2.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/commercial/3.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/commercial/4.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/commercial/5.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/commercial/6.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/commercial/7.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/commercial/8.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/commercial/9.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/commercial/10.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/commercial/11.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/commercial/12.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/commercial/13.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><img src="images/commercial/14.jpg" onclick="openImage(this);" /></div>
+					<div class="gallery-image"><!-- Nothing --></div>
+				</div>
 			</div>
-			<div class="break"></div>
-			<div class="page-entry">
-				<span class="gallery-title">Carefree • 2016</span><br>
-				<img class="gallery-image" src="images/carefree-1/thumb/1.jpg" onclick="setMain('gallery-main-image-3', 'images/carefree-1/1.jpg');" />
-				<img class="gallery-image" src="images/carefree-1/thumb/2.jpg" onclick="setMain('gallery-main-image-3', 'images/carefree-1/2.jpg');" />
-				<img class="gallery-image" src="images/carefree-1/thumb/3.jpg" onclick="setMain('gallery-main-image-3', 'images/carefree-1/3.jpg');" />
-				<img class="gallery-image" src="images/carefree-1/thumb/4.jpg" onclick="setMain('gallery-main-image-3', 'images/carefree-1/4.jpg');" />
-				<img class="gallery-main-image" id="gallery-main-image-3" src="images/carefree-1/1.jpg" onclick="openImage('images/carefree-1/1.jpg');" />
-			</div>
-			<div class="break"></div>
-			<div class="page-entry">
-				<span class="gallery-title">Carefree • 1988</span><br>
-				<img class="gallery-image" src="images/carefree-2/thumb/1.jpg" onclick="setMain('gallery-main-image-4', 'images/carefree-2/1.jpg');" />
-				<img class="gallery-image" src="images/carefree-2/thumb/2.jpg" onclick="setMain('gallery-main-image-4', 'images/carefree-2/2.jpg');" />
-				<img class="gallery-image" src="images/carefree-2/thumb/3.jpg" onclick="setMain('gallery-main-image-4', 'images/carefree-2/3.jpg');" />
-				<img class="gallery-image" src="images/carefree-2/thumb/4.jpg" onclick="setMain('gallery-main-image-4', 'images/carefree-2/4.jpg');" />
-				<img class="gallery-image" src="images/carefree-2/thumb/5.jpg" onclick="setMain('gallery-main-image-4', 'images/carefree-2/5.jpg');" />
-				<img class="gallery-image" src="images/carefree-2/thumb/6.jpg" onclick="setMain('gallery-main-image-4', 'images/carefree-2/6.jpg');" />
-				<img class="gallery-main-image" id="gallery-main-image-4" src="images/carefree-2/1.jpg" onclick="openImage('images/carefree-2/1.jpg');" />
-			</div>
-			<div class="break"></div>
-			<div class="page-entry">
-				<span class="gallery-title">Desert Mountain • 2020</span><br>
-				<img class="gallery-image" src="images/desert-mountain/thumb/1.jpg" onclick="setMain('gallery-main-image-5', 'images/desert-mountain/1.jpg');" />
-				<img class="gallery-image" src="images/desert-mountain/thumb/2.jpg" onclick="setMain('gallery-main-image-5', 'images/desert-mountain/2.jpg');" />
-				<img class="gallery-image" src="images/desert-mountain/thumb/3.jpg" onclick="setMain('gallery-main-image-5', 'images/desert-mountain/3.jpg');" />
-				<img class="gallery-image" src="images/desert-mountain/thumb/4.jpg" onclick="setMain('gallery-main-image-5', 'images/desert-mountain/4.jpg');" />
-				<img class="gallery-image" src="images/desert-mountain/thumb/5.jpg" onclick="setMain('gallery-main-image-5', 'images/desert-mountain/5.jpg');" />
-				<img class="gallery-main-image" id="gallery-main-image-5" src="images/desert-mountain/1.jpg" onclick="openImage('images/desert-mountain/1.jpg');" />
-			</div>
-			<div class="break"></div>
-			<div class="page-entry">
-				<span class="gallery-title">Estancia • 2009</span><br>
-				<img class="gallery-image" src="images/estancia/thumb/1.jpg" onclick="setMain('gallery-main-image-6', 'images/estancia/1.jpg');" />
-				<img class="gallery-image" src="images/estancia/thumb/2.jpg" onclick="setMain('gallery-main-image-6', 'images/estancia/2.jpg');" />
-				<img class="gallery-image" src="images/estancia/thumb/3.jpg" onclick="setMain('gallery-main-image-6', 'images/estancia/3.jpg');" />
-				<img class="gallery-image" src="images/estancia/thumb/4.jpg" onclick="setMain('gallery-main-image-6', 'images/estancia/4.jpg');" />
-				<img class="gallery-image" src="images/estancia/thumb/5.jpg" onclick="setMain('gallery-main-image-6', 'images/estancia/5.jpg');" />
-				<img class="gallery-main-image" id="gallery-main-image-6" src="images/estancia/1.jpg" onclick="openImage('images/estancia/1.jpg');" />
-			</div>
-			<div class="break"></div>
-			<div class="page-entry">
-				<span class="gallery-title">Scottsdale • 2009</span><br>
-				<img class="gallery-image" src="images/scottsdale-1/thumb/1.jpg" onclick="setMain('gallery-main-image-7', 'images/scottsdale-1/1.jpg');" />
-				<img class="gallery-image" src="images/scottsdale-1/thumb/2.jpg" onclick="setMain('gallery-main-image-7', 'images/scottsdale-1/2.jpg');" />
-				<img class="gallery-image" src="images/scottsdale-1/thumb/3.jpg" onclick="setMain('gallery-main-image-7', 'images/scottsdale-1/3.jpg');" />
-				<img class="gallery-image" src="images/scottsdale-1/thumb/4.jpg" onclick="setMain('gallery-main-image-7', 'images/scottsdale-1/4.jpg');" />
-				<img class="gallery-image" src="images/scottsdale-1/thumb/5.jpg" onclick="setMain('gallery-main-image-7', 'images/scottsdale-1/5.jpg');" />
-				<img class="gallery-image" src="images/scottsdale-1/thumb/6.jpg" onclick="setMain('gallery-main-image-7', 'images/scottsdale-1/6.jpg');" />
-				<img class="gallery-main-image" id="gallery-main-image-7" src="images/scottsdale-1/1.jpg" onclick="openImage('images/scottsdale-1/1.jpg');" />
-			</div>
-			<div class="break"></div>
-			<div class="page-entry">
-				<span class="gallery-title">Scottsdale • 2019</span><br>
-				<img class="gallery-image" src="images/scottsdale-2/thumb/1.jpg" onclick="setMain('gallery-main-image-8', 'images/scottsdale-2/1.jpg');" />
-				<img class="gallery-image" src="images/scottsdale-2/thumb/2.jpg" onclick="setMain('gallery-main-image-8', 'images/scottsdale-2/2.jpg');" />
-				<img class="gallery-image" src="images/scottsdale-2/thumb/3.jpg" onclick="setMain('gallery-main-image-8', 'images/scottsdale-2/3.jpg');" />
-				<img class="gallery-image" src="images/scottsdale-2/thumb/4.jpg" onclick="setMain('gallery-main-image-8', 'images/scottsdale-2/4.jpg');" />
-				<img class="gallery-image" src="images/scottsdale-2/thumb/5.jpg" onclick="setMain('gallery-main-image-8', 'images/scottsdale-2/5.jpg');" />
-				<img class="gallery-main-image" id="gallery-main-image-8" src="images/scottsdale-2/1.jpg" onclick="openImage('images/scottsdale-2/1.jpg');" />
-			</div>
-			<div class="break"></div>
-			<div class="page-entry">
-				<span class="gallery-title">Troon Highlands • 2014</span><br>
-				<img class="gallery-image" src="images/troon-highlands/thumb/1.jpg" onclick="setMain('gallery-main-image-9', 'images/troon-highlands/1.jpg');" />
-				<img class="gallery-image" src="images/troon-highlands/thumb/2.jpg" onclick="setMain('gallery-main-image-9', 'images/troon-highlands/2.jpg');" />
-				<img class="gallery-image" src="images/troon-highlands/thumb/3.jpg" onclick="setMain('gallery-main-image-9', 'images/troon-highlands/3.jpg');" />
-				<img class="gallery-image" src="images/troon-highlands/thumb/4.jpg" onclick="setMain('gallery-main-image-9', 'images/troon-highlands/4.jpg');" />
-				<img class="gallery-image" src="images/troon-highlands/thumb/5.jpg" onclick="setMain('gallery-main-image-9', 'images/troon-highlands/5.jpg');" />
-				<img class="gallery-main-image" id="gallery-main-image-9" src="images/troon-highlands/1.jpg" onclick="openImage('images/troon-highlands/1.jpg');" />
-			</div>
-			<div class="break"></div>
-			<div class="page-entry">
-				<span class="gallery-title">Whisper Rock • 2014</span><br>
-				<img class="gallery-image" src="images/whisper-rock-1/thumb/1.jpg" onclick="setMain('gallery-main-image-10', 'images/whisper-rock-1/1.jpg');" />
-				<img class="gallery-image" src="images/whisper-rock-1/thumb/2.jpg" onclick="setMain('gallery-main-image-10', 'images/whisper-rock-1/2.jpg');" />
-				<img class="gallery-image" src="images/whisper-rock-1/thumb/3.jpg" onclick="setMain('gallery-main-image-10', 'images/whisper-rock-1/3.jpg');" />
-				<img class="gallery-main-image" id="gallery-main-image-10" src="images/whisper-rock-1/1.jpg" onclick="openImage('images/whisper-rock-1/1.jpg');" />
-			</div>
-			<div class="break"></div>
-			<div class="page-entry">
-				<span class="gallery-title">Whisper Rock • 2015</span><br>
-				<img class="gallery-image" src="images/whisper-rock-2/thumb/1.jpg" onclick="setMain('gallery-main-image-11', 'images/whisper-rock-2/1.jpg');" />
-				<img class="gallery-image" src="images/whisper-rock-2/thumb/2.jpg" onclick="setMain('gallery-main-image-11', 'images/whisper-rock-2/2.jpg');" />
-				<img class="gallery-image" src="images/whisper-rock-2/thumb/3.jpg" onclick="setMain('gallery-main-image-11', 'images/whisper-rock-2/3.jpg');" />
-				<img class="gallery-image" src="images/whisper-rock-2/thumb/4.jpg" onclick="setMain('gallery-main-image-11', 'images/whisper-rock-2/4.jpg');" />
-				<img class="gallery-main-image" id="gallery-main-image-11" src="images/whisper-rock-2/1.jpg" onclick="openImage('images/whisper-rock-2/1.jpg');" />
-			</div>
-			<div class="break"></div>
-			<div class="page-entry">
-				<span class="gallery-title">Misc. residential projects</span><br>
-				<img class="gallery-image" src="images/misc/thumb/1.jpg" onclick="setMain('gallery-main-image-12', 'images/misc/1.jpg');" />
-				<img class="gallery-image" src="images/misc/thumb/2.jpg" onclick="setMain('gallery-main-image-12', 'images/misc/2.jpg');" />
-				<img class="gallery-image" src="images/misc/thumb/3.jpg" onclick="setMain('gallery-main-image-12', 'images/misc/3.jpg');" />
-				<img class="gallery-image" src="images/misc/thumb/4.jpg" onclick="setMain('gallery-main-image-12', 'images/misc/4.jpg');" />
-				<img class="gallery-image" src="images/misc/thumb/5.jpg" onclick="setMain('gallery-main-image-12', 'images/misc/5.jpg');" />
-				<img class="gallery-image" src="images/misc/thumb/6.jpg" onclick="setMain('gallery-main-image-12', 'images/misc/6.jpg');" />
-				<img class="gallery-image" src="images/misc/thumb/7.jpg" onclick="setMain('gallery-main-image-12', 'images/misc/7.jpg');" />
-				<img class="gallery-image" src="images/misc/thumb/8.jpg" onclick="setMain('gallery-main-image-12', 'images/misc/8.jpg');" />
-				<img class="gallery-image" src="images/misc/thumb/9.jpg" onclick="setMain('gallery-main-image-12', 'images/misc/9.jpg');" />
-				<img class="gallery-main-image" id="gallery-main-image-12" src="images/misc/1.jpg" onclick="openImage('images/misc/1.jpg');" />
-			</div>
-			<div class="break"></div>
-			<div class="page-entry">
-				<div class="anchor" id="commercial"></div>
-				<div class="title-text">Commercial</div>
-				<div class="empty-break"></div>
-				<span class="gallery-title">Misc. commercial projects</span><br>
-				<img class="gallery-image" src="images/commercial/thumb/1.jpg" onclick="setMain('gallery-main-image-13', 'images/commercial/1.jpg');" />
-				<img class="gallery-image" src="images/commercial/thumb/2.jpg" onclick="setMain('gallery-main-image-13', 'images/commercial/2.jpg');" />
-				<img class="gallery-image" src="images/commercial/thumb/3.jpg" onclick="setMain('gallery-main-image-13', 'images/commercial/3.jpg');" />
-				<img class="gallery-image" src="images/commercial/thumb/4.jpg" onclick="setMain('gallery-main-image-13', 'images/commercial/4.jpg');" />
-				<img class="gallery-image" src="images/commercial/thumb/5.jpg" onclick="setMain('gallery-main-image-13', 'images/commercial/5.jpg');" />
-				<img class="gallery-image" src="images/commercial/thumb/6.jpg" onclick="setMain('gallery-main-image-13', 'images/commercial/6.jpg');" />
-				<img class="gallery-image" src="images/commercial/thumb/7.jpg" onclick="setMain('gallery-main-image-13', 'images/commercial/7.jpg');" />
-				<img class="gallery-image" src="images/commercial/thumb/8.jpg" onclick="setMain('gallery-main-image-13', 'images/commercial/8.jpg');" />
-				<img class="gallery-image" src="images/commercial/thumb/9.jpg" onclick="setMain('gallery-main-image-13', 'images/commercial/9.jpg');" />
-				<img class="gallery-image" src="images/commercial/thumb/10.jpg" onclick="setMain('gallery-main-image-13', 'images/commercial/10.jpg');" />
-				<img class="gallery-image" src="images/commercial/thumb/11.jpg" onclick="setMain('gallery-main-image-13', 'images/commercial/11.jpg');" />
-				<img class="gallery-image" src="images/commercial/thumb/12.jpg" onclick="setMain('gallery-main-image-13', 'images/commercial/12.jpg');" />
-				<img class="gallery-image" src="images/commercial/thumb/13.jpg" onclick="setMain('gallery-main-image-13', 'images/commercial/13.jpg');" />
-				<img class="gallery-image" src="images/commercial/thumb/14.jpg" onclick="setMain('gallery-main-image-13', 'images/commercial/14.jpg');" />
-				<img class="gallery-main-image" id="gallery-main-image-13" src="images/commercial/1.jpg" onclick="openImage('images/commercial/1.jpg');" />
-			</div>
+			<!-- Footer -->
+			<div class="footer">
+				<div class="footer-entry footer-entry-first">
+					<div class="small-text padded-text"><b>GREEN STUDIO</b></div>					
+					<div class="footer-icon unselectable" onclick="window.open('https://www.facebook.com/greenstudioaz/', '_blank');">
+						<div class="fab fa-facebook-f"></div>
+					</div>
+					<div class="footer-icon unselectable" onclick="window.open('https://www.houzz.com/pro/greenstudioaz', '_blank');">
+						<div class="fab fa-houzz"></div>
+					</div>
+				</div>
+				<div class="footer-entry">
+					<div class="tiny-text"><b>PHONE</b></div>
+					<div class="small-text padded-text">(602) 697-4246</div>
+					<div class="tiny-text"><b>EMAIL</b></div>
+					<div class="small-text">tyler@greenstudioaz.com</div>
+				</div>
+				<div class="footer-entry footer-entry-last">
+					<div class="tiny-text"><b>ADDRESS</b></div>
+					<div class="small-text padded-text">11480 N. 85th St.<br>Scottsdale, AZ 85260</div>
+				</div>
+			</div>	
 		</div>
-		<!-- Footer -->
-		<footer>
-			<table class="footer-table">
-				<tr>
-					<td class="footer-entry">
-						<div class="small-text">
-							<b>GREEN STUDIO</b>
-						</div>
-						<a href="https://www.facebook.com/greenstudioaz/" target="_blank">
-							<img class="icon" src="images/facebook.png" alt="Facebook" />
-						</a>
-						<a href="https://www.houzz.com/pro/greenstudioaz" target="_blank">
-							<img class="icon" src="images/houzz.png" alt="Houzz" />
-						</a>
-					</td>
-					<td class="footer-entry">
-						<div class="small-text"><b>Address</b><br>11480 N. 85th St.<br>Scottsdale, Arizona 85260<br></div>
-					</td>
-					<td class="footer-entry">
-						<div class="small-text"><b>Contact</b><br>(602) 697-4246<br>tyler@greenstudioaz.com<br></div>
-					</td>
-				</tr>
-			</table>
-		</footer>
-	</body>
-	<script type="text/javascript" src="scripts/menu.js"></script>
-	<script type="text/javascript">
-		let overlay = document.getElementById("gallery-overlay");
-		let fullImage = document.getElementById("gallery-full-image");
-		function openImage(source) {
-			fullImage.src = source;
-			overlay.style.opacity = "1";
-			overlay.style.pointerEvents = "auto";
-		}
-		function closeImage() {
-			overlay.style.opacity = "0";
-			overlay.style.pointerEvents = "none";
-		}
-		function setMain(main, source) {
-			let mainImage = document.getElementById(main);
-			mainImage.src = source;
-			mainImage.onclick = function() { 
-				openImage(source); 
-			};
-		}
-	</script>
+		<script type="text/javascript" src="scripts/menu.js"></script>
+		<script type="text/javascript">
+			let galleryOverlay = document.getElementById("gallery-overlay");
+			let galleryFullImage = document.getElementById("gallery-full-image");
+			function openImage(img) {
+				galleryFullImage.src = img.src;
+				galleryOverlay.style.opacity = "1";
+				galleryOverlay.style.pointerEvents = "auto";
+			}
+			function closeImage() {
+				galleryOverlay.style.opacity = "0";
+				galleryOverlay.style.pointerEvents = "none";
+			}
+		</script>
+		<!-- <script type="text/javascript">
+			let animationTimeout = 1500;
+		
+			let images = document.getElementsByClassName("banner-image");
+			let current = 0;
+			let count = images.length;
+			
+			let disabled = false;
+			//Moves to next image, and disables buttons during animation
+			function nextImage() {
+				if(!disabled) {
+					images[current].classList.add("hidden");
+					current = (current + 1) % count;
+					images[current].classList.remove("hidden");
+					disabled = true;
+					setTimeout(function() { 
+						disabled = false;
+					}, animationTimeout);
+				}
+			}
+			//Moves to previous image, and disables buttons during animation
+			function lastImage() {
+				if(!disabled) {
+					images[current].classList.add("hidden");
+					current = (current + count - 1) % count;
+					images[current].classList.remove("hidden");
+					disabled = true;
+					setTimeout(function() { 
+						disabled = false;
+					}, animationTimeout);
+				}
+			}
+			//Moves to next image after a time interval
+			let timer;
+			function start() {
+				nextImage();
+				timer = setInterval(nextImage, 5000);
+			}
+			//Starts banner animation after a timeout
+			let start_timer = setTimeout(start, 5000);
+			//Pauses banner animation, and restarts it after a longer timeout
+			function pause() {
+				clearInterval(timer);
+				clearTimeout(start_timer);
+				start_timer = setTimeout(start, 10000);
+			}
+		</script>
+		-->
+		
+	</body>	
 </html>

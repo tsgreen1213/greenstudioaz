@@ -1,14 +1,12 @@
-let menu = document.getElementById("menu");
-let menuOverlay = document.getElementById("menu-overlay");
+let sidebar = document.getElementById("sidebar");
+let overlay = document.getElementById("overlay");
 function openMenu() {
-	menu.style.left = "0px";
-	menu.style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, .5)";
-	menuOverlay.style.opacity = "1";
-	menuOverlay.style.pointerEvents = "auto";
+	sidebar.style.left = "0";
+	overlay.style.opacity = ".5";
+	overlay.style.pointerEvents = "auto";
 }
 function closeMenu() {
-	menu.style.left = "-70%";
-	menu.style.boxShadow = "none";
-	menuOverlay.style.opacity = "0";
-	menuOverlay.style.pointerEvents = "none";
+	sidebar.style.left = "-90%";
+	overlay.style.opacity = "0";
+	overlay.style.pointerEvents = "none";
 }
